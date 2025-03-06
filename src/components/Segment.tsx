@@ -1,13 +1,15 @@
 import { Box } from "@react-three/drei";
-import { JSX } from "react/jsx-runtime";
+import { SegInfo } from "../Utils/SegmentInfo";
 
-const Segment = (props: JSX.IntrinsicElements["group"]) => {
+const Segment = ({ length, rotation, xPosition, yPosition }: SegInfo) => {
   return (
-    <group {...props}>
-      <Box args={[5, 0.1, 2]}>
-        <meshStandardMaterial color="red" />
-      </Box>
-    </group>
+    <Box
+      args={[length, 0.1, 2]}
+      rotation-z={rotation}
+      position={[xPosition + 1.5, yPosition, 0]}
+    >
+      <meshStandardMaterial color="red" />
+    </Box>
   );
 };
 
