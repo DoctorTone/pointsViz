@@ -11,8 +11,9 @@ const Graph = () => {
     points.map((_, index) => {
       const nextPoints = points[index];
       const prevPoints = index === 0 ? 0 : points[index - 1];
-      const segLength = Math.sqrt(9 + nextPoints * nextPoints);
-      const rot = Math.asin(nextPoints / segLength);
+      const deltaPoints = nextPoints - prevPoints;
+      const segLength = Math.sqrt(9 + deltaPoints * deltaPoints);
+      const rot = Math.asin(deltaPoints / segLength);
       const yPos = (nextPoints - prevPoints) / 2 + prevPoints;
       details.push({
         length: segLength,
@@ -22,6 +23,8 @@ const Graph = () => {
       });
     });
 
+    // DEBUG
+    console.log("Details = ", details);
     return details;
   }, []);
 
