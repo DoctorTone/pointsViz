@@ -4,6 +4,7 @@ import { SegInfo } from "../Utils/SegmentInfo";
 import { SEGMENTS } from "../Utils/utils";
 
 const points_2324 = [0, 3, 3, 6, 7, 7, 8, 9, 10, 10];
+
 const points_2425 = [
   1, 4, 5, 8, 9, 9, 10, 13, 16, 19, 19, 19, 22, 22, 25, 28, 31, 34, 37, 40, 41,
   44, 44, 47, 47, 47, 48,

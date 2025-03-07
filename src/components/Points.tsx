@@ -1,11 +1,11 @@
 import { Box } from "@react-three/drei";
 
-const Timeline = () => {
+const Points = () => {
   return (
-    <Box args={[38 * 3, 0.1, 0.5]} position-x={(38 * 3) / 2}>
+    <Box args={[0.1, 70, 0.5]} position-y={35}>
       <meshStandardMaterial color={"grey"} />
     </Box>
   );
 };
 
-export default Timeline;
+export default Points;
