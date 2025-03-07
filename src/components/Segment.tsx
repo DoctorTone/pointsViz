@@ -1,14 +1,19 @@
 import { Box } from "@react-three/drei";
 import { SegInfo } from "../Utils/SegmentInfo";
 
-const Segment = ({ length, rotation, xPosition, yPosition }: SegInfo) => {
+interface SegmentProps {
+  info: SegInfo;
+  colour: string;
+}
+
+const Segment = ({ info, colour }: SegmentProps) => {
   return (
     <Box
-      args={[length, 0.1, 2]}
-      rotation-z={rotation}
-      position={[xPosition + 1.5, yPosition, 0]}
+      args={[info.length, 0.1, 2]}
+      rotation-z={info.rotation}
+      position={[info.xPosition + 1.5, info.yPosition, 0]}
     >
-      <meshStandardMaterial color="red" />
+      <meshStandardMaterial color={colour} />
     </Box>
   );
 };
