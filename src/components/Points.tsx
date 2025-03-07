@@ -1,10 +1,15 @@
-import { Box } from "@react-three/drei";
+import { Html } from "@react-three/drei";
+import Typography from "@mui/material/Typography";
 
 const Points = () => {
   return (
-    <Box args={[0.1, 70, 0.5]} position-y={35}>
-      <meshStandardMaterial color={"grey"} />
-    </Box>
+    <>
+      <Html position={[0, 70, 0]}>
+        <Typography variant="h5" sx={{ color: "grey" }}>
+          Points
+        </Typography>
+      </Html>
+    </>
   );
 };
 
