@@ -5,14 +5,20 @@ import Timeline from "./components/Timeline";
 import Points from "./components/Points";
 import Controls from "./UI/Controls";
 import Title from "./UI/Title";
+import { SCENE } from "./Utils/utils";
 
 function App() {
   return (
     <>
       <Controls />
       <Title />
-      <Canvas camera={{ position: [0, 0, 20] }}>
-        <Stage shadows="contact" intensity={0.5} environment="city">
+      <Canvas camera={{ position: SCENE.CAM_POSITION }}>
+        <Stage
+          adjustCamera={false}
+          shadows="contact"
+          intensity={0.5}
+          environment="city"
+        >
           <Graph />
           <Points />
           <Timeline />
