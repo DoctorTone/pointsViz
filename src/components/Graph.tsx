@@ -8,13 +8,15 @@ import points2324 from "../Data/forest_23_24.json";
 
 const Graph = () => {
   const show_24_25 = useStore((state) => state.show_24_25);
+  const show_23_24 = useStore((state) => state.show_23_24);
+
   const segDetails: SegInfo[] = useMemo(() => {
     const details: SegInfo[] = [];
     points2425.map((current, index) => {
       const nextPoints = current.points;
       const prevPoints = index === 0 ? 0 : points2425[index - 1].points;
       const deltaPoints = nextPoints - prevPoints;
-      const segLength = Math.sqrt(9 + deltaPoints * deltaPoints);
+      const segLength = Math.sqrt(SEGMENTS.WEEK_LENGTH ** 2 + deltaPoints ** 2);
       const rot = Math.asin(deltaPoints / segLength);
       const yPos = (nextPoints - prevPoints) / 2 + prevPoints;
       details.push({
@@ -34,7 +36,7 @@ const Graph = () => {
       const nextPoints = current.points;
       const prevPoints = index === 0 ? 0 : points2324[index - 1].points;
       const deltaPoints = nextPoints - prevPoints;
-      const segLength = Math.sqrt(9 + deltaPoints * deltaPoints);
+      const segLength = Math.sqrt(SEGMENTS.WEEK_LENGTH ** 2 + deltaPoints ** 2);
       const rot = Math.asin(deltaPoints / segLength);
       const yPos = (nextPoints - prevPoints) / 2 + prevPoints;
       details.push({
@@ -54,9 +56,10 @@ const Graph = () => {
         segDetails.map((info, index) => (
           <Segment info={info} colour="red" key={index} />
         ))}
-      {segDetails2.map((info, index) => (
-        <Segment info={info} colour="blue" key={index} />
-      ))}
+      {show_23_24 &&
+        segDetails2.map((info, index) => (
+          <Segment info={info} colour="blue" key={index} />
+        ))}
     </>
   );
 };

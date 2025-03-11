@@ -5,7 +5,7 @@ const Timeline = () => {
 
   return (
     <>
-      <Text color="grey" position={[40 * 3, 0, 0]} fontSize={3}>
+      <Text color="grey" position={[40 * 3, -1, 0]} fontSize={3}>
         Matches
       </Text>
       {matches.map((match) => (
