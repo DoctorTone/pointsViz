@@ -8,7 +8,7 @@ const Points = () => {
         Points
       </Text>
       {pointsLine.map((total) => (
-        <Text position={[-5, total, 0]} fontSize={2} color="grey">
+        <Text position={[-5, total, 0]} fontSize={2} color="grey" key={total}>
           {total.toString()}
         </Text>
       ))}

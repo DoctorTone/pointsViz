@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import useStore from "../state/store";
 import Segment from "./Segment";
 import { SegInfo } from "../Utils/SegmentInfo";
 import { SEGMENTS } from "../Utils/utils";
@@ -6,6 +7,7 @@ import points2425 from "../Data/forest_24_25.json";
 import points2324 from "../Data/forest_23_24.json";
 
 const Graph = () => {
+  const show_24_25 = useStore((state) => state.show_24_25);
   const segDetails: SegInfo[] = useMemo(() => {
     const details: SegInfo[] = [];
     points2425.map((current, index) => {
@@ -48,9 +50,10 @@ const Graph = () => {
 
   return (
     <>
-      {segDetails.map((info, index) => (
-        <Segment info={info} colour="red" key={index} />
-      ))}
+      {show_24_25 &&
+        segDetails.map((info, index) => (
+          <Segment info={info} colour="red" key={index} />
+        ))}
       {segDetails2.map((info, index) => (
         <Segment info={info} colour="blue" key={index} />
       ))}

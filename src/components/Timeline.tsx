@@ -9,7 +9,12 @@ const Timeline = () => {
         Matches
       </Text>
       {matches.map((match) => (
-        <Text position={[match * 3, -1, 0]} fontSize={2} color="grey">
+        <Text
+          position={[match * 3, -1, 0]}
+          fontSize={2}
+          color="grey"
+          key={match}
+        >
           {match.toString()}
         </Text>
       ))}
