@@ -5,6 +5,7 @@ const Controls = () => {
   const showSeason_24_25 = useStore((state) => state.showSeason_24_25);
   const showSeason_23_24 = useStore((state) => state.showSeason_23_24);
   const showSeason_22_23 = useStore((state) => state.showSeason_22_23);
+  const showSeason_Villa = useStore((state) => state.showSeason_Villa);
   const setBackground = useStore((state) => state.setBackground);
 
   const data = useControls({
@@ -19,6 +20,7 @@ const Controls = () => {
   showSeason_24_25(data["Season 24/25"]);
   showSeason_23_24(data["Season 23/24"]);
   showSeason_22_23(data["Season 22/23"]);
+  showSeason_Villa(data["Villa 23/24"]);
   setBackground(data.backGround);
 
   return null;
