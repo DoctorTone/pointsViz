@@ -5,6 +5,7 @@ import { Season_23_24 } from "../seasons/Season_23_24";
 import { Season_22_23 } from "../seasons/Season_22_23";
 import { Villa_23_24 } from "../seasons/Villa_23_24";
 import { Newcastle_22_23 } from "../seasons/Newcastle_22_23";
+import { Derby_07_08 } from "../seasons/Derby_07_08";
 
 const Graph = () => {
   const show_24_25 = useStore((state) => state.show_24_25);
@@ -12,6 +13,7 @@ const Graph = () => {
   const show_22_23 = useStore((state) => state.show_22_23);
   const show_Villa = useStore((state) => state.show_villa);
   const show_Newcastle = useStore((state) => state.show_newcastle);
+  const show_Derby = useStore((state) => state.show_derby);
 
   return (
     <>
@@ -34,6 +36,10 @@ const Graph = () => {
       {show_Newcastle &&
         Newcastle_22_23.map((info, index) => (
           <Segment info={info} colour="white" key={index} />
+        ))}
+      {show_Derby &&
+        Derby_07_08.map((info, index) => (
+          <Segment info={info} colour="black" key={index} />
         ))}
     </>
   );

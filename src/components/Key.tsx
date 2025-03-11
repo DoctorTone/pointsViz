@@ -7,6 +7,7 @@ const Key = () => {
   const show_22_23 = useStore((state) => state.show_22_23);
   const show_Villa = useStore((state) => state.show_villa);
   const show_Newcastle = useStore((state) => state.show_newcastle);
+  const show_Derby = useStore((state) => state.show_derby);
 
   return (
     <>
@@ -33,6 +34,11 @@ const Key = () => {
       {show_Newcastle && (
         <Text color="white" position={[40 * 3, 72, 0]} fontSize={2}>
           Newcastle
+        </Text>
+      )}
+      {show_Derby && (
+        <Text color="black" position={[39 * 3, 12, 0]} fontSize={2}>
+          Derby
         </Text>
       )}
     </>

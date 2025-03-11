@@ -7,6 +7,7 @@ const Controls = () => {
   const showSeason_22_23 = useStore((state) => state.showSeason_22_23);
   const showSeason_Villa = useStore((state) => state.showSeason_Villa);
   const showSeason_Newcastle = useStore((state) => state.showSeason_Newcastle);
+  const showSeason_Derby = useStore((state) => state.showSeason_Derby);
   const setBackground = useStore((state) => state.setBackground);
 
   const data = useControls({
@@ -15,6 +16,7 @@ const Controls = () => {
     "Season 22/23": true,
     "Villa 23/24": false,
     "Newcastle 22/23": false,
+    "Derby 07/08": false,
     backGround: "#2b2b2b",
   });
 
@@ -23,6 +25,7 @@ const Controls = () => {
   showSeason_22_23(data["Season 22/23"]);
   showSeason_Villa(data["Villa 23/24"]);
   showSeason_Newcastle(data["Newcastle 22/23"]);
+  showSeason_Derby(data["Derby 07/08"]);
   setBackground(data.backGround);
 
   return null;
