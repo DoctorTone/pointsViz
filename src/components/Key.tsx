@@ -6,6 +6,7 @@ const Key = () => {
   const show_23_24 = useStore((state) => state.show_23_24);
   const show_22_23 = useStore((state) => state.show_22_23);
   const show_Villa = useStore((state) => state.show_villa);
+  const show_Newcastle = useStore((state) => state.show_newcastle);
 
   return (
     <>
@@ -25,8 +26,13 @@ const Key = () => {
         </Text>
       )}
       {show_Villa && (
-        <Text color="#893d9a" position={[38 * 3, 70, 0]} fontSize={2}>
+        <Text color="#893d9a" position={[39 * 3, 69, 0]} fontSize={2}>
           Villa
+        </Text>
+      )}
+      {show_Newcastle && (
+        <Text color="white" position={[40 * 3, 72, 0]} fontSize={2}>
+          Newcastle
         </Text>
       )}
     </>
