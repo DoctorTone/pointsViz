@@ -4,6 +4,18 @@ const SEGMENTS = {
 };
 
 const SCENE = {
-  CAM_POSITION: new Vector3(0, 0, 70),
+  CAM_POSITION: new Vector3(0, 0, 200),
 };
-export { SEGMENTS, SCENE };
+
+const isMobileDevice = () => {
+  // See if mobile
+  try {
+    document.createEvent("TouchEvent");
+    return true;
+  } catch (error) {
+    // Must be desktop
+    return false;
+  }
+};
+
+export { SEGMENTS, SCENE, isMobileDevice };

@@ -31,7 +31,13 @@ body {
 .w-25 {
   width: 20%;
 }
+.thumbnail {
+  width: 7%;
+}
+.centred {
+  text-align: center;
+}
 #title {
-  top: 3%;
-  left: 40%;
+  top: 10%;
+  left: 0%;
 }

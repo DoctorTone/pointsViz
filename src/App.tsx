@@ -8,12 +8,16 @@ import Title from "./UI/Title";
 import { SCENE } from "./Utils/utils";
 import useStore from "./state/store";
 import Key from "./components/Key";
+import { isMobileDevice } from "./Utils/utils";
+import { Leva } from "leva";
 
 function App() {
   const backGround = useStore((state) => state.backGround);
+  const isMobile = isMobileDevice();
 
   return (
     <>
+      {isMobile && <Leva collapsed={true} />}
       <Controls />
       <Title />
       <Canvas
