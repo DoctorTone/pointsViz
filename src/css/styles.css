@@ -41,3 +41,24 @@ body {
   top: 10%;
   left: 0%;
 }
+
+/* Adjust for different display sizes */
+@media (min-width: 600px) {
+  .thumbnail {
+    width: 4%;
+  }
+  #title {
+    top: 0.5%;
+    left: -20%;
+  }
+}
+@media (min-width: 1024px) {
+  #title {
+    left: 0%;
+  }
+}
+@media (min-width: 1200px) {
+  .thumbnail {
+    width: 2.5%;
+  }
+}

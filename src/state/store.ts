@@ -17,7 +17,7 @@ interface PointsState {
   setBackground: (color: string) => void;
 }
 
-const useStore = create<PointsState>((set, get) => ({
+const useStore = create<PointsState>((set) => ({
   show_24_25: true,
   showSeason_24_25: (status) => set(() => ({ show_24_25: status })),
   show_23_24: true,

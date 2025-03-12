@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
+import ResponsiveCamera from "./components/ResponsiveCamera";
 import Graph from "./components/Graph";
 import Timeline from "./components/Timeline";
 import Points from "./components/Points";
@@ -24,6 +25,7 @@ function App() {
         camera={{ position: SCENE.CAM_POSITION }}
         style={{ background: backGround }}
       >
+        <ResponsiveCamera />
         <Stage
           adjustCamera={false}
           shadows="contact"

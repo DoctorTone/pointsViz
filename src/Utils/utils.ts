@@ -4,7 +4,10 @@ const SEGMENTS = {
 };
 
 const SCENE = {
-  CAM_POSITION: new Vector3(0, 0, 200),
+  LOW_RES: 600,
+  MEDIUM_RES: 880,
+  HIGH_RES: 1024,
+  CAM_POSITION: new Vector3(0, 0, 70),
 };
 
 const isMobileDevice = () => {
