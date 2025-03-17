@@ -6,6 +6,7 @@ const Controls = () => {
   const showSeason_23_24 = useStore((state) => state.showSeason_23_24);
   const showSeason_22_23 = useStore((state) => state.showSeason_22_23);
   const showSeason_09_10 = useStore((state) => state.showSeason_09_10);
+  const showSeason_10_11 = useStore((state) => state.showSeason_10_11);
   const showSeason_Villa = useStore((state) => state.showSeason_Villa);
   const showSeason_Newcastle = useStore((state) => state.showSeason_Newcastle);
   const showSeason_Derby = useStore((state) => state.showSeason_Derby);
@@ -16,6 +17,7 @@ const Controls = () => {
     "Season 23/24": true,
     "Season 22/23": true,
     "Season 09/10": false,
+    "Season 10/11": false,
     "Villa 23/24": false,
     "Newcastle 22/23": false,
     "Derby 07/08": false,
@@ -26,6 +28,7 @@ const Controls = () => {
   showSeason_23_24(data["Season 23/24"]);
   showSeason_22_23(data["Season 22/23"]);
   showSeason_09_10(data["Season 09/10"]);
+  showSeason_10_11(data["Season 10/11"]);
   showSeason_Villa(data["Villa 23/24"]);
   showSeason_Newcastle(data["Newcastle 22/23"]);
   showSeason_Derby(data["Derby 07/08"]);

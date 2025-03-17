@@ -6,7 +6,7 @@ const Face = (props: JSX.IntrinsicElements["group"]) => {
 
   return (
     <group {...props}>
-      <Plane args={[5, 5]}>
+      <Plane args={[4, 4]}>
         <meshStandardMaterial map={billy} transparent={true} />
       </Plane>
     </group>

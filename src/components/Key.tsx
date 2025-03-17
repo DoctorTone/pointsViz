@@ -7,6 +7,7 @@ const Key = () => {
   const show_23_24 = useStore((state) => state.show_23_24);
   const show_22_23 = useStore((state) => state.show_22_23);
   const show_09_10 = useStore((state) => state.show_09_10);
+  const show_10_11 = useStore((state) => state.show_10_11);
   const show_Villa = useStore((state) => state.show_villa);
   const show_Newcastle = useStore((state) => state.show_newcastle);
   const show_Derby = useStore((state) => state.show_derby);
@@ -14,7 +15,7 @@ const Key = () => {
   return (
     <>
       {show_24_25 && (
-        <Text color="red" position={[30 * 3, 53, 0]} fontSize={2}>
+        <Text color="red" position={[30 * 3, 55, 0]} fontSize={2}>
           24/25
         </Text>
       )}
@@ -28,7 +29,8 @@ const Key = () => {
           22/23
         </Text>
       )}
-      {show_09_10 && <Face position={[47.5 * 3, 80, 0]} />}
+      {show_09_10 && <Face position={[47 * 3, 80, 0]} />}
+      {show_10_11 && <Face position={[47 * 3, 75, 0]} />}
       {show_Villa && (
         <Text color="#893d9a" position={[39 * 3, 69, 0]} fontSize={2}>
           Villa
