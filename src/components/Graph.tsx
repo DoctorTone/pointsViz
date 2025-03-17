@@ -3,6 +3,7 @@ import Segment from "./Segment";
 import { Season_24_25 } from "../seasons/Season_24_25";
 import { Season_23_24 } from "../seasons/Season_23_24";
 import { Season_22_23 } from "../seasons/Season_22_23";
+import { Season_09_10 } from "../seasons/Seasaon_09_10";
 import { Villa_23_24 } from "../seasons/Villa_23_24";
 import { Newcastle_22_23 } from "../seasons/Newcastle_22_23";
 import { Derby_07_08 } from "../seasons/Derby_07_08";
@@ -14,6 +15,7 @@ const Graph = () => {
   const show_Villa = useStore((state) => state.show_villa);
   const show_Newcastle = useStore((state) => state.show_newcastle);
   const show_Derby = useStore((state) => state.show_derby);
+  const show_09_10 = useStore((state) => state.show_09_10);
 
   return (
     <>
@@ -40,6 +42,10 @@ const Graph = () => {
       {show_Derby &&
         Derby_07_08.map((info, index) => (
           <Segment info={info} colour="black" key={index} />
+        ))}
+      {show_09_10 &&
+        Season_09_10.map((info, index) => (
+          <Segment info={info} colour="gold" key={index} />
         ))}
     </>
   );

@@ -1,0 +1,18 @@
+import { SegInfo } from "../Utils/SegmentInfo";
+import points0910 from "../Data/forest_09_10.json";
+import { SEGMENTS } from "../Utils/utils";
+
+export const Season_09_10: SegInfo[] = points0910.map((current, index) => {
+  const nextPoints = current.points;
+  const prevPoints = index === 0 ? 0 : points0910[index - 1].points;
+  const deltaPoints = nextPoints - prevPoints;
+  const segLength = Math.sqrt(SEGMENTS.WEEK_LENGTH ** 2 + deltaPoints ** 2);
+  const rot = Math.asin(deltaPoints / segLength);
+  const yPos = (nextPoints - prevPoints) / 2 + prevPoints;
+  return {
+    length: segLength,
+    rotation: rot,
+    xPosition: index * SEGMENTS.WEEK_LENGTH,
+    yPosition: yPos,
+  };
+});

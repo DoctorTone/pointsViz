@@ -13,6 +13,8 @@ interface PointsState {
   showSeason_Newcastle: (status: boolean) => void;
   show_derby: boolean;
   showSeason_Derby: (status: boolean) => void;
+  show_09_10: boolean;
+  showSeason_09_10: (status: boolean) => void;
   backGround: string;
   setBackground: (color: string) => void;
 }
@@ -30,6 +32,8 @@ const useStore = create<PointsState>((set) => ({
   showSeason_Newcastle: (status) => set(() => ({ show_newcastle: status })),
   show_derby: false,
   showSeason_Derby: (status) => set(() => ({ show_derby: status })),
+  show_09_10: false,
+  showSeason_09_10: (status) => set(() => ({ show_09_10: status })),
   backGround: "#2b2b2b",
   setBackground: (color) => set(() => ({ backGround: color })),
 }));
