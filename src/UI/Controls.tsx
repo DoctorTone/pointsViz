@@ -13,26 +13,61 @@ const Controls = () => {
   const setBackground = useStore((state) => state.setBackground);
 
   const data = useControls({
-    "Season 24/25": true,
-    "Season 23/24": true,
-    "Season 22/23": true,
-    "Season 09/10": false,
-    "Season 10/11": false,
-    "Villa 23/24": false,
-    "Newcastle 22/23": false,
-    "Derby 07/08": false,
-    backGround: "#2b2b2b",
+    "Season 24/25": {
+      value: true,
+      onChange: (v) => {
+        showSeason_24_25(v);
+      },
+    },
+    "Season 23/24": {
+      value: true,
+      onChange: (v) => {
+        showSeason_23_24(v);
+      },
+    },
+    "Season 22/23": {
+      value: true,
+      onChange: (v) => {
+        showSeason_22_23(v);
+      },
+    },
+    "Season 09/10": {
+      value: false,
+      onChange: (v) => {
+        showSeason_09_10(v);
+      },
+    },
+    "Season 10/11": {
+      value: false,
+      onChange: (v) => {
+        showSeason_10_11(v);
+      },
+    },
+    "Villa 23/24": {
+      value: false,
+      onChange: (v) => {
+        showSeason_Villa(v);
+      },
+    },
+    "Newcastle 22/23": {
+      value: false,
+      onChange: (v) => {
+        showSeason_Newcastle(v);
+      },
+    },
+    "Derby 07/08": {
+      value: false,
+      onChange: (v) => {
+        showSeason_Derby(v);
+      },
+    },
+    backGround: {
+      value: "#2b2b2b",
+      onChange: (colour) => {
+        setBackground(colour);
+      },
+    },
   });
-
-  showSeason_24_25(data["Season 24/25"]);
-  showSeason_23_24(data["Season 23/24"]);
-  showSeason_22_23(data["Season 22/23"]);
-  showSeason_09_10(data["Season 09/10"]);
-  showSeason_10_11(data["Season 10/11"]);
-  showSeason_Villa(data["Villa 23/24"]);
-  showSeason_Newcastle(data["Newcastle 22/23"]);
-  showSeason_Derby(data["Derby 07/08"]);
-  setBackground(data.backGround);
 
   return null;
 };
