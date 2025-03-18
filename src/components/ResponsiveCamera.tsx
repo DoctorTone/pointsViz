@@ -8,13 +8,13 @@ const ResponsiveCamera = () => {
   useEffect(() => {
     const updateCameraPosition = () => {
       if (size.width < SCENE.LOW_RES) {
-        camera.position.set(0, 0, 200);
+        camera.position.set(0, 0, 220);
         camera.updateProjectionMatrix();
       } else if (size.width <= SCENE.MEDIUM_RES && size.height > size.width) {
-        camera.position.set(0, 0, 120);
+        camera.position.set(0, 0, 140);
         camera.updateProjectionMatrix();
       } else if (size.width <= SCENE.MEDIUM_RES) {
-        camera.position.set(0, 0, 80);
+        camera.position.set(0, 0, 100);
         camera.updateProjectionMatrix();
       }
     };
