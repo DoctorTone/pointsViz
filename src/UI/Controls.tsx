@@ -12,7 +12,7 @@ const Controls = () => {
   const showSeason_Derby = useStore((state) => state.showSeason_Derby);
   const setBackground = useStore((state) => state.setBackground);
 
-  const data = useControls({
+  useControls({
     "Season 24/25": {
       value: true,
       onChange: (v) => {

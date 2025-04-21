@@ -15,7 +15,7 @@ const Key = () => {
   return (
     <>
       {show_24_25 && (
-        <Text color="red" position={[30 * 3, 55, 0]} fontSize={2}>
+        <Text color="red" position={[33 * 3, 58, 0]} fontSize={2}>
           24/25
         </Text>
       )}
