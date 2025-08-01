@@ -11,7 +11,7 @@ import { Newcastle_22_23 } from "../seasons/Newcastle_22_23";
 import { Derby_07_08 } from "../seasons/Derby_07_08";
 import { SegInfo } from "../Utils/SegmentInfo";
 
-const animating = true;
+const animating = false;
 
 const Graph = () => {
   const [visibleSegment, setVisibleSegment] = useState(0);
@@ -26,7 +26,7 @@ const Graph = () => {
 
   const getSegment = (season: SegInfo[]) => {
     if (animating) {
-      Season_24_25.map((info, index) => (
+      const segs = Season_24_25.map((info, index) => (
         <Segment
           info={info}
           colour="red"
@@ -34,32 +34,27 @@ const Graph = () => {
           visible={index < visibleSegment}
         />
       ));
+
+      return segs;
+    } else {
+      const segs = Season_24_25.map((info, index) => (
+        <Segment info={info} colour="red" key={index} visible={true} />
+      ));
+      return segs;
     }
-    // const segs = Season_24_25.map((info, index) => (
-    //   <Segment info={info} colour="red" key={index} />
-    // ));
-    // return segs;
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibleSegment((segment) => segment + 1);
-    }, 500);
+    }, 250);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <>
-      {show_24_25 &&
-        Season_24_25.map((info, index) => (
-          <Segment
-            info={info}
-            colour="red"
-            key={index}
-            visible={index < visibleSegment}
-          />
-        ))}
+      {show_24_25 && getSegment(Season_24_25)}
 
       {/* {show_23_24 &&
         Season_23_24.map((info, index) => (
