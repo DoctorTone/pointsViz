@@ -41,7 +41,10 @@ body {
   top: 10%;
   left: 0%;
 }
-
+#animation {
+  right: 5%;
+  top: 40%;
+}
 /* Adjust for different display sizes */
 @media (min-width: 600px) {
   .thumbnail {

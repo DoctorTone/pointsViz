@@ -11,6 +11,7 @@ import useStore from "./state/store";
 import Key from "./components/Key";
 import { isMobileDevice } from "./Utils/utils";
 import { Leva } from "leva";
+import Animation from "./UI/Animation";
 
 function App() {
   const backGround = useStore((state) => state.backGround);
@@ -21,6 +22,7 @@ function App() {
       {isMobile && <Leva collapsed={true} />}
       <Controls />
       <Title />
+      <Animation />
       <Canvas
         camera={{ position: SCENE.CAM_POSITION }}
         style={{ background: backGround }}
