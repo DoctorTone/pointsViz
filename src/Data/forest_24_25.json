@@ -130,5 +130,25 @@
   {
     "opponents": "Tottenham",
     "points": 60
+  },
+  {
+    "opponents": "Brentford",
+    "points": 60
+  },
+  {
+    "opponents": "Palace",
+    "points": 61
+  },
+  {
+    "opponents": "Leicester",
+    "points": 62
+  },
+  {
+    "opponents": "West Ham",
+    "points": 65
+  },
+  {
+    "opponents": "Chelsea",
+    "points": 65
   }
 ]
