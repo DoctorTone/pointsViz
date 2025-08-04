@@ -26,8 +26,6 @@ const Graph = () => {
   const toggleAnimation = useStore((state) => state.toggleAnimation);
 
   const getSegment = (season: SegInfo[]) => {
-    // DEBUG
-    console.log("Visible = ", visibleSegment);
     if (visibleSegment >= SEGMENTS.MAX - 1) {
       setVisibleSegment(-1);
       toggleAnimation();
