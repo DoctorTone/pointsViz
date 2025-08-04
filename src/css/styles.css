@@ -73,9 +73,17 @@ body {
     right: 3.5%;
   }
 }
+@media (min-width: 768px) and (orientation: portrait) {
+  #animation {
+    bottom: 35%;
+  }
+}
 @media (min-width: 1024px) {
   #title {
     left: 0%;
+  }
+  #animation {
+    bottom: 27.5%;
   }
 }
 @media (min-width: 1200px) {
