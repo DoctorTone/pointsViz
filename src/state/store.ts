@@ -19,6 +19,8 @@ interface PointsState {
   showSeason_10_11: (status: boolean) => void;
   backGround: string;
   setBackground: (color: string) => void;
+  animating: boolean;
+  toggleAnimation: () => void;
 }
 
 const useStore = create<PointsState>((set) => ({
@@ -40,6 +42,8 @@ const useStore = create<PointsState>((set) => ({
   showSeason_10_11: (status) => set(() => ({ show_10_11: status })),
   backGround: "#2b2b2b",
   setBackground: (color) => set(() => ({ backGround: color })),
+  animating: false,
+  toggleAnimation: () => set((state) => ({ animating: !state.animating })),
 }));
 
 export default useStore;

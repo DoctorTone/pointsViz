@@ -12,8 +12,6 @@ import { Newcastle_22_23 } from "../seasons/Newcastle_22_23";
 import { Derby_07_08 } from "../seasons/Derby_07_08";
 import { SegInfo } from "../Utils/SegmentInfo";
 
-const animating = true;
-
 const Graph = () => {
   const [visibleSegment, setVisibleSegment] = useState(0);
   const show_24_25 = useStore((state) => state.show_24_25);
@@ -24,6 +22,7 @@ const Graph = () => {
   const show_Derby = useStore((state) => state.show_derby);
   const show_09_10 = useStore((state) => state.show_09_10);
   const show_10_11 = useStore((state) => state.show_10_11);
+  const animating = useStore((state) => state.animating);
 
   const getSegment = (season: SegInfo[]) => {
     if (animating) {
