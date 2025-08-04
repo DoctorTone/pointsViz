@@ -8,8 +8,6 @@ interface SegmentProps {
 }
 
 const Segment = ({ info, visible, colour }: SegmentProps) => {
-  // DEBUG
-  console.log("Visible = ", visible);
   return (
     <Box
       args={[info.length, 0.1, 2]}

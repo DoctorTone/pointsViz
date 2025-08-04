@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useStore from "../state/store";
 import Segment from "./Segment";
-import { ANIMATION } from "../state/Config";
+import { ANIMATION, SEGMENTS } from "../state/Config";
 import { Season_24_25 } from "../seasons/Season_24_25";
 import { Season_23_24 } from "../seasons/Season_23_24";
 import { Season_22_23 } from "../seasons/Season_22_23";
@@ -23,8 +23,15 @@ const Graph = () => {
   const show_09_10 = useStore((state) => state.show_09_10);
   const show_10_11 = useStore((state) => state.show_10_11);
   const animating = useStore((state) => state.animating);
+  const toggleAnimation = useStore((state) => state.toggleAnimation);
 
   const getSegment = (season: SegInfo[]) => {
+    // DEBUG
+    console.log("Visible = ", visibleSegment);
+    if (visibleSegment >= SEGMENTS.MAX - 1) {
+      setVisibleSegment(-1);
+      toggleAnimation();
+    }
     const segs = Season_24_25.map((info, index) => (
       <Segment
         info={info}
