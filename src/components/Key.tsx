@@ -19,16 +19,16 @@ const Key = () => {
           24/25
         </Text>
       )} */}
-      {show_23_24 && (
+      {/* {show_23_24 && (
         <Text color="blue" position={[39 * 3, 35, 0]} fontSize={2}>
           23/24
         </Text>
-      )}
-      {show_22_23 && (
+      )} */}
+      {/* {show_22_23 && (
         <Text color="green" position={[39 * 3, 40, 0]} fontSize={2}>
           22/23
         </Text>
-      )}
+      )} */}
       {show_09_10 && <Face position={[47 * 3, 80, 0]} />}
       {show_10_11 && <Face position={[47 * 3, 75, 0]} />}
       {show_Villa && (

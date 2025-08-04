@@ -1,4 +1,5 @@
 import { Vector3 } from "three";
+import { Season_22_23 } from "../seasons/Season_22_23";
 const SEGMENTS = {
   WEEK_LENGTH: 3,
   MAX: 38,
@@ -6,7 +7,8 @@ const SEGMENTS = {
 
 const SEASON_COLOUR = {
   Season_24_25: "red",
-  Season_23_24: "blue",
+  Season_23_24: "yellow",
+  Season_22_23: "green",
 };
 
 const SCENE = {

@@ -51,7 +51,11 @@ const Graph = () => {
 
     return (
       <>
-        <Text fontSize={2} color="white" position={pointsPosition}>
+        <Text
+          fontSize={2}
+          color={SEASON_COLOUR[season[0].name]}
+          position={pointsPosition}
+        >
           {visibleSegment < 0
             ? season[SEGMENTS.MAX - 1].points
             : season[visibleSegment].points}
@@ -85,11 +89,8 @@ const Graph = () => {
       {show_24_25 && getSegment(Season_24_25)}
 
       {show_23_24 && getSegment(Season_23_24)}
-      {/* {show_22_23 &&
-        Season_22_23.map((info, index) => (
-          <Segment info={info} colour="green" key={index} />
-        ))}
-      {show_Villa &&
+      {show_22_23 && getSegment(Season_22_23)}
+      {/* {show_Villa &&
         Villa_23_24.map((info, index) => (
           <Segment info={info} colour="#451f4e" key={index} />
         ))}

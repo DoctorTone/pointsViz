@@ -14,5 +14,7 @@ export const Season_22_23: SegInfo[] = points2223.map((current, index) => {
     rotation: rot,
     xPosition: index * SEGMENTS.WEEK_LENGTH,
     yPosition: yPos,
+    points: nextPoints,
+    name: "Season_22_23",
   };
 });
