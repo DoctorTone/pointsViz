@@ -47,6 +47,10 @@ const Graph = () => {
       pointsPosition.x =
         Season_24_25[visibleSegment].xPosition + SEGMENTS.WEEK_LENGTH;
       pointsPosition.y = Season_24_25[visibleSegment].yPosition + 3;
+    } else {
+      pointsPosition.x =
+        Season_24_25[SEGMENTS.MAX - 1].xPosition + SEGMENTS.WEEK_LENGTH;
+      pointsPosition.y = Season_24_25[SEGMENTS.MAX - 1].yPosition + 3;
     }
 
     return (
