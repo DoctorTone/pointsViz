@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useStore from "../state/store";
 import Segment from "./Segment";
 import { Text } from "@react-three/drei";
-import { ANIMATION, SEGMENTS } from "../Utils/utils";
+import { ANIMATION, SEGMENTS, SEASON_COLOUR } from "../Utils/utils";
 import { Season_24_25 } from "../seasons/Season_24_25";
 import { Season_23_24 } from "../seasons/Season_23_24";
 import { Season_22_23 } from "../seasons/Season_22_23";
@@ -28,14 +28,10 @@ const Graph = () => {
   const toggleAnimation = useStore((state) => state.toggleAnimation);
 
   const getSegment = (season: SegInfo[]) => {
-    if (visibleSegment >= SEGMENTS.MAX - 1) {
-      setVisibleSegment(-1);
-      toggleAnimation();
-    }
     const segs = season.map((info, index) => (
       <Segment
         info={info}
-        colour="red"
+        colour={SEASON_COLOUR[info.name]}
         key={index}
         visible={visibleSegment < 0 ? true : index <= visibleSegment}
       />
@@ -77,15 +73,19 @@ const Graph = () => {
     return () => clearInterval(interval);
   }, [animating]);
 
+  useEffect(() => {
+    if (visibleSegment >= SEGMENTS.MAX - 1) {
+      setVisibleSegment(-1);
+      toggleAnimation();
+    }
+  }, [visibleSegment]);
+
   return (
     <>
       {show_24_25 && getSegment(Season_24_25)}
 
-      {/* {show_23_24 &&
-        Season_23_24.map((info, index) => (
-          <Segment info={info} colour="blue" key={index} />
-        ))}
-      {show_22_23 &&
+      {show_23_24 && getSegment(Season_23_24)}
+      {/* {show_22_23 &&
         Season_22_23.map((info, index) => (
           <Segment info={info} colour="green" key={index} />
         ))}

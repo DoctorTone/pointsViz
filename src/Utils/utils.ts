@@ -4,6 +4,11 @@ const SEGMENTS = {
   MAX: 38,
 };
 
+const SEASON_COLOUR = {
+  Season_24_25: "red",
+  Season_23_24: "blue",
+};
+
 const SCENE = {
   LOW_RES: 600,
   MEDIUM_RES: 880,
@@ -26,4 +31,4 @@ const isMobileDevice = () => {
   }
 };
 
-export { SEGMENTS, SCENE, ANIMATION, isMobileDevice };
+export { SEGMENTS, SCENE, ANIMATION, SEASON_COLOUR, isMobileDevice };

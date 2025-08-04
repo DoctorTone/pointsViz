@@ -4,4 +4,5 @@ export type SegInfo = {
   xPosition: number;
   yPosition: number;
   points: number;
+  name: string;
 };
