@@ -1,5 +1,5 @@
 import { Vector3 } from "three";
-import { Season_22_23 } from "../seasons/Season_22_23";
+
 const SEGMENTS = {
   WEEK_LENGTH: 3,
   MAX: 38,
@@ -19,7 +19,7 @@ const SCENE = {
 };
 
 const ANIMATION = {
-  PLAYBACK_SPEED: 500,
+  PLAYBACK_SPEED: 375,
 };
 
 const isMobileDevice = () => {

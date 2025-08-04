@@ -45,6 +45,20 @@ body {
   right: 5%;
   top: 40%;
 }
+.key {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
 /* Adjust for different display sizes */
 @media (min-width: 600px) {
   .thumbnail {
