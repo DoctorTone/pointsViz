@@ -90,26 +90,26 @@ const Graph = () => {
 
       {show_23_24 && getSegment(Season_23_24)}
       {show_22_23 && getSegment(Season_22_23)}
-      {/* {show_Villa &&
+      {show_Villa &&
         Villa_23_24.map((info, index) => (
-          <Segment info={info} colour="#451f4e" key={index} />
+          <Segment info={info} colour="#451f4e" key={index} visible={true} />
         ))}
       {show_Newcastle &&
         Newcastle_22_23.map((info, index) => (
-          <Segment info={info} colour="white" key={index} />
+          <Segment info={info} colour="white" key={index} visible={true} />
         ))}
       {show_Derby &&
         Derby_07_08.map((info, index) => (
-          <Segment info={info} colour="black" key={index} />
+          <Segment info={info} colour="black" key={index} visible={true} />
         ))}
       {show_09_10 &&
         Season_09_10.map((info, index) => (
-          <Segment info={info} colour="gold" key={index} />
+          <Segment info={info} colour="gold" key={index} visible={true} />
         ))}
       {show_10_11 &&
         Season_10_11.map((info, index) => (
-          <Segment info={info} colour="gold" key={index} />
-        ))} */}
+          <Segment info={info} colour="gold" key={index} visible={true} />
+        ))}
     </>
   );
 };
