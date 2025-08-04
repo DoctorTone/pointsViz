@@ -32,7 +32,7 @@ const Graph = () => {
       setVisibleSegment(-1);
       toggleAnimation();
     }
-    const segs = Season_24_25.map((info, index) => (
+    const segs = season.map((info, index) => (
       <Segment
         info={info}
         colour="red"
@@ -45,20 +45,20 @@ const Graph = () => {
 
     if (visibleSegment >= 0) {
       pointsPosition.x =
-        Season_24_25[visibleSegment].xPosition + SEGMENTS.WEEK_LENGTH;
-      pointsPosition.y = Season_24_25[visibleSegment].yPosition + 3;
+        season[visibleSegment].xPosition + SEGMENTS.WEEK_LENGTH;
+      pointsPosition.y = season[visibleSegment].yPosition + 3;
     } else {
       pointsPosition.x =
-        Season_24_25[SEGMENTS.MAX - 1].xPosition + SEGMENTS.WEEK_LENGTH;
-      pointsPosition.y = Season_24_25[SEGMENTS.MAX - 1].yPosition + 3;
+        season[SEGMENTS.MAX - 1].xPosition + SEGMENTS.WEEK_LENGTH;
+      pointsPosition.y = season[SEGMENTS.MAX - 1].yPosition + 3;
     }
 
     return (
       <>
         <Text fontSize={2} color="white" position={pointsPosition}>
           {visibleSegment < 0
-            ? Season_24_25[SEGMENTS.MAX - 1].points
-            : Season_24_25[visibleSegment].points}
+            ? season[SEGMENTS.MAX - 1].points
+            : season[visibleSegment].points}
         </Text>
         {segs}
       </>

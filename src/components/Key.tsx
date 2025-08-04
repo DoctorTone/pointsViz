@@ -14,11 +14,11 @@ const Key = () => {
 
   return (
     <>
-      {show_24_25 && (
+      {/* {show_24_25 && (
         <Text color="red" position={[39 * 3, 67, 0]} fontSize={2}>
           24/25
         </Text>
-      )}
+      )} */}
       {show_23_24 && (
         <Text color="blue" position={[39 * 3, 35, 0]} fontSize={2}>
           23/24
