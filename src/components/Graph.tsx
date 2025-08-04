@@ -13,7 +13,7 @@ import { Derby_07_08 } from "../seasons/Derby_07_08";
 import { SegInfo } from "../Utils/SegmentInfo";
 
 const Graph = () => {
-  const [visibleSegment, setVisibleSegment] = useState(0);
+  const [visibleSegment, setVisibleSegment] = useState(-1);
   const show_24_25 = useStore((state) => state.show_24_25);
   const show_23_24 = useStore((state) => state.show_23_24);
   const show_22_23 = useStore((state) => state.show_22_23);
@@ -25,32 +25,29 @@ const Graph = () => {
   const animating = useStore((state) => state.animating);
 
   const getSegment = (season: SegInfo[]) => {
-    if (animating) {
-      const segs = Season_24_25.map((info, index) => (
-        <Segment
-          info={info}
-          colour="red"
-          key={index}
-          visible={index < visibleSegment}
-        />
-      ));
+    const segs = Season_24_25.map((info, index) => (
+      <Segment
+        info={info}
+        colour="red"
+        key={index}
+        visible={visibleSegment < 0 ? true : index < visibleSegment}
+      />
+    ));
 
-      return segs;
-    } else {
-      const segs = Season_24_25.map((info, index) => (
-        <Segment info={info} colour="red" key={index} visible={true} />
-      ));
-      return segs;
-    }
+    return segs;
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setVisibleSegment((segment) => segment + 1);
-    }, ANIMATION.PLAYBACK_SPEED);
+    let interval: number;
+
+    if (animating) {
+      interval = setInterval(() => {
+        setVisibleSegment((segment) => segment + 1);
+      }, ANIMATION.PLAYBACK_SPEED);
+    }
 
     return () => clearInterval(interval);
-  }, []);
+  }, [animating]);
 
   return (
     <>
