@@ -42,8 +42,8 @@ body {
   left: 0%;
 }
 #animation {
-  right: 5%;
-  top: 40%;
+  right: 30%;
+  bottom: 10%;
 }
 .key {
   width: 10px;
@@ -77,5 +77,9 @@ body {
 @media (min-width: 1200px) {
   .thumbnail {
     width: 2.5%;
+  }
+  #animation {
+    bottom: 20%;
+    right: 7.5%;
   }
 }

@@ -15,32 +15,32 @@ const Animation = () => {
 
   return (
     <div id="animation" className="panel centred">
-      <Typography variant="h6" color="primary">
+      <Typography variant="subtitle1" color="primary">
         Points
       </Typography>
       {animating ? (
         <IconButton onClick={togglePlay}>
-          <PauseCircleOutlineIcon color="primary" sx={{ fontSize: 60 }} />
+          <PauseCircleOutlineIcon color="primary" sx={{ fontSize: 50 }} />
         </IconButton>
       ) : (
         <IconButton onClick={togglePlay}>
-          <PlayCircleOutlineIcon color="primary" sx={{ fontSize: 60 }} />
+          <PlayCircleOutlineIcon color="primary" sx={{ fontSize: 50 }} />
         </IconButton>
       )}
       <div>
-        <Typography variant="h6" color="red">
+        <Typography variant="subtitle1" color="red">
           <Box className="key red" sx={{ marginRight: 1 }}></Box>
           Season 24-25
         </Typography>
       </div>
       <div>
-        <Typography variant="h6" color="yellow">
+        <Typography variant="subtitle1" color="yellow">
           <Box className="key yellow" sx={{ marginRight: 1 }}></Box>
           Season 23-24
         </Typography>
       </div>
       <div>
-        <Typography variant="h6" color="green">
+        <Typography variant="subtitle1" color="green">
           <Box className="key green" sx={{ marginRight: 1 }}></Box>
           Season 22-23
         </Typography>
