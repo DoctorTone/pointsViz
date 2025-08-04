@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import useStore from "../state/store";
 import Segment from "./Segment";
+import { ANIMATION } from "../state/Config";
 import { Season_24_25 } from "../seasons/Season_24_25";
 import { Season_23_24 } from "../seasons/Season_23_24";
 import { Season_22_23 } from "../seasons/Season_22_23";
@@ -11,7 +12,7 @@ import { Newcastle_22_23 } from "../seasons/Newcastle_22_23";
 import { Derby_07_08 } from "../seasons/Derby_07_08";
 import { SegInfo } from "../Utils/SegmentInfo";
 
-const animating = false;
+const animating = true;
 
 const Graph = () => {
   const [visibleSegment, setVisibleSegment] = useState(0);
@@ -47,7 +48,7 @@ const Graph = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibleSegment((segment) => segment + 1);
-    }, 250);
+    }, ANIMATION.PLAYBACK_SPEED);
 
     return () => clearInterval(interval);
   }, []);
