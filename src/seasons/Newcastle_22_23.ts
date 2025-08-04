@@ -1,6 +1,6 @@
 import { SegInfo } from "../Utils/SegmentInfo";
 import newcastlePoints from "../Data/newcastle_22_23.json";
-import { SEGMENTS } from "../Utils/utils";
+import { SEGMENTS } from "../state/Config";
 
 export const Newcastle_22_23: SegInfo[] = newcastlePoints.map(
   (current, index) => {
@@ -15,6 +15,8 @@ export const Newcastle_22_23: SegInfo[] = newcastlePoints.map(
       rotation: rot,
       xPosition: index * SEGMENTS.WEEK_LENGTH,
       yPosition: yPos,
+      points: nextPoints,
+      name: "Newcastle",
     };
   }
 );

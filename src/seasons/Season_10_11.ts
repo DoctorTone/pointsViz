@@ -1,6 +1,6 @@
 import { SegInfo } from "../Utils/SegmentInfo";
 import points1011 from "../Data/forest_10_11.json";
-import { SEGMENTS } from "../Utils/utils";
+import { SEGMENTS } from "../state/Config";
 
 export const Season_10_11: SegInfo[] = points1011.map((current, index) => {
   const nextPoints = current.points;
@@ -14,5 +14,7 @@ export const Season_10_11: SegInfo[] = points1011.map((current, index) => {
     rotation: rot,
     xPosition: index * SEGMENTS.WEEK_LENGTH,
     yPosition: yPos,
+    points: nextPoints,
+    name: "Season_10_11",
   };
 });

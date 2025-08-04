@@ -68,6 +68,10 @@ body {
     top: 0.5%;
     left: -20%;
   }
+  #animation {
+    bottom: 20%;
+    right: 3.5%;
+  }
 }
 @media (min-width: 1024px) {
   #title {

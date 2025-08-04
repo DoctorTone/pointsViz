@@ -1,6 +1,6 @@
 import { SegInfo } from "../Utils/SegmentInfo";
 import derbyPoints from "../Data/derby_07_08.json";
-import { SEGMENTS } from "../Utils/utils";
+import { SEGMENTS } from "../state/Config";
 
 export const Derby_07_08: SegInfo[] = derbyPoints.map((current, index) => {
   const nextPoints = current.points;
@@ -14,5 +14,7 @@ export const Derby_07_08: SegInfo[] = derbyPoints.map((current, index) => {
     rotation: rot,
     xPosition: index * SEGMENTS.WEEK_LENGTH,
     yPosition: yPos,
+    points: nextPoints,
+    name: "Derby",
   };
 });

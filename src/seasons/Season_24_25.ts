@@ -1,6 +1,6 @@
 import { SegInfo } from "../Utils/SegmentInfo";
 import points2425 from "../Data/forest_24_25.json";
-import { SEGMENTS } from "../Utils/utils";
+import { SEGMENTS } from "../state/Config";
 
 export const Season_24_25: SegInfo[] = points2425.map((current, index) => {
   const nextPoints = current.points;

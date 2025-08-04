@@ -1,6 +1,6 @@
 import { SegInfo } from "../Utils/SegmentInfo";
 import villaPoints from "../Data/villa_23_24.json";
-import { SEGMENTS } from "../Utils/utils";
+import { SEGMENTS } from "../state/Config";
 
 export const Villa_23_24: SegInfo[] = villaPoints.map((current, index) => {
   const nextPoints = current.points;
@@ -14,5 +14,7 @@ export const Villa_23_24: SegInfo[] = villaPoints.map((current, index) => {
     rotation: rot,
     xPosition: index * SEGMENTS.WEEK_LENGTH,
     yPosition: yPos,
+    points: nextPoints,
+    name: "Villa",
   };
 });

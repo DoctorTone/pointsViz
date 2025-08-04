@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useStore from "../state/store";
 import Segment from "./Segment";
 import { Text } from "@react-three/drei";
-import { ANIMATION, SEGMENTS, SEASON_COLOUR } from "../Utils/utils";
+import { ANIMATION, SEGMENTS, SEASON_COLOUR } from "../state/Config";
 import { Season_24_25 } from "../seasons/Season_24_25";
 import { Season_23_24 } from "../seasons/Season_23_24";
 import { Season_22_23 } from "../seasons/Season_22_23";

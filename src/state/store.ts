@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import type { ScreenSize } from "./Config";
 
 interface PointsState {
   show_24_25: boolean;
@@ -21,6 +22,8 @@ interface PointsState {
   setBackground: (color: string) => void;
   animating: boolean;
   toggleAnimation: () => void;
+  screenSize: ScreenSize;
+  setScreenSize: (size: ScreenSize) => void;
 }
 
 const useStore = create<PointsState>((set) => ({
@@ -44,6 +47,9 @@ const useStore = create<PointsState>((set) => ({
   setBackground: (color) => set(() => ({ backGround: color })),
   animating: false,
   toggleAnimation: () => set((state) => ({ animating: !state.animating })),
+  screenSize: { width: window.innerWidth, height: window.innerHeight },
+  setScreenSize: (size) =>
+    set((state) => ({ screenSize: { ...state.screenSize, ...size } })),
 }));
 
 export default useStore;

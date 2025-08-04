@@ -6,7 +6,6 @@ import Timeline from "./components/Timeline";
 import Points from "./components/Points";
 import Controls from "./UI/Controls";
 import Title from "./UI/Title";
-import { SCENE } from "./Utils/utils";
 import useStore from "./state/store";
 import Key from "./components/Key";
 import { isMobileDevice } from "./Utils/utils";
@@ -23,10 +22,7 @@ function App() {
       <Controls />
       <Title />
       <Animation />
-      <Canvas
-        camera={{ position: SCENE.CAM_POSITION }}
-        style={{ background: backGround }}
-      >
+      <Canvas style={{ background: backGround }}>
         <ResponsiveCamera />
         <Stage
           adjustCamera={false}

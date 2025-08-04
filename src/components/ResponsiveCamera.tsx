@@ -1,27 +1,31 @@
 import { useEffect } from "react";
 import { useThree } from "@react-three/fiber";
-import { SCENE } from "../Utils/utils";
+import { getScreenConfiguration } from "../Utils/utils";
+import useStore from "../state/store";
 
 const ResponsiveCamera = () => {
-  const { camera, size } = useThree();
+  const screenSize = useStore((state) => state.screenSize);
+  const setScreenSize = useStore((state) => state.setScreenSize);
+
+  const { camera } = useThree();
 
   useEffect(() => {
-    const updateCameraPosition = () => {
-      if (size.width < SCENE.LOW_RES) {
-        camera.position.set(0, 0, 220);
-        camera.updateProjectionMatrix();
-      } else if (size.width <= SCENE.MEDIUM_RES && size.height > size.width) {
-        camera.position.set(0, 0, 140);
-        camera.updateProjectionMatrix();
-      } else if (size.width <= SCENE.MEDIUM_RES) {
-        camera.position.set(0, 0, 100);
-        camera.updateProjectionMatrix();
-      }
+    const handleResize = () => {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     };
-    updateCameraPosition();
-    window.addEventListener("resize", updateCameraPosition);
-    return () => window.removeEventListener("resize", updateCameraPosition);
-  }, [camera, size]);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const configuration = getScreenConfiguration(
+      screenSize.width,
+      screenSize.height
+    );
+    camera.position.copy(configuration.CAMERA_POSITION);
+    camera.updateProjectionMatrix();
+  }, [screenSize.width, screenSize.height]);
 
   return null;
 };
