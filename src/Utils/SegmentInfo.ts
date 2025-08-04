@@ -3,4 +3,5 @@ export type SegInfo = {
   rotation: number;
   xPosition: number;
   yPosition: number;
+  points: number;
 };

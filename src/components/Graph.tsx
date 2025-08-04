@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import useStore from "../state/store";
 import Segment from "./Segment";
-import { ANIMATION, SEGMENTS } from "../state/Config";
+import { Text } from "@react-three/drei";
+import { ANIMATION, SEGMENTS } from "../Utils/utils";
 import { Season_24_25 } from "../seasons/Season_24_25";
 import { Season_23_24 } from "../seasons/Season_23_24";
 import { Season_22_23 } from "../seasons/Season_22_23";
@@ -11,6 +12,7 @@ import { Villa_23_24 } from "../seasons/Villa_23_24";
 import { Newcastle_22_23 } from "../seasons/Newcastle_22_23";
 import { Derby_07_08 } from "../seasons/Derby_07_08";
 import { SegInfo } from "../Utils/SegmentInfo";
+import { Vector3 } from "three";
 
 const Graph = () => {
   const [visibleSegment, setVisibleSegment] = useState(-1);
@@ -35,11 +37,28 @@ const Graph = () => {
         info={info}
         colour="red"
         key={index}
-        visible={visibleSegment < 0 ? true : index < visibleSegment}
+        visible={visibleSegment < 0 ? true : index <= visibleSegment}
       />
     ));
 
-    return segs;
+    let pointsPosition = new Vector3();
+
+    if (visibleSegment >= 0) {
+      pointsPosition.x =
+        Season_24_25[visibleSegment].xPosition + SEGMENTS.WEEK_LENGTH;
+      pointsPosition.y = Season_24_25[visibleSegment].yPosition + 3;
+    }
+
+    return (
+      <>
+        <Text fontSize={2} color="white" position={pointsPosition}>
+          {visibleSegment < 0
+            ? Season_24_25[SEGMENTS.MAX - 1].points
+            : Season_24_25[visibleSegment].points}
+        </Text>
+        {segs}
+      </>
+    );
   };
 
   useEffect(() => {

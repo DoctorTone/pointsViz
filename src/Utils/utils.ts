@@ -1,6 +1,7 @@
 import { Vector3 } from "three";
 const SEGMENTS = {
   WEEK_LENGTH: 3,
+  MAX: 38,
 };
 
 const SCENE = {
@@ -8,6 +9,10 @@ const SCENE = {
   MEDIUM_RES: 880,
   HIGH_RES: 1024,
   CAM_POSITION: new Vector3(0, 0, 80),
+};
+
+const ANIMATION = {
+  PLAYBACK_SPEED: 500,
 };
 
 const isMobileDevice = () => {
@@ -21,4 +26,4 @@ const isMobileDevice = () => {
   }
 };
 
-export { SEGMENTS, SCENE, isMobileDevice };
+export { SEGMENTS, SCENE, ANIMATION, isMobileDevice };
